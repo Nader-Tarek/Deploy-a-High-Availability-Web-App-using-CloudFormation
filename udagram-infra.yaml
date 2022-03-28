@@ -140,12 +140,14 @@ Resources:
 
     FirstPublicSubnetRouteTableAssociation:
         Type: AWS::EC2::SubnetRouteTableAssociation
+        DependsOn: InternetGatewayAttachment
         Properties:
             RouteTableId: !Ref PublicRouteTable
             SubnetId: !Ref FirstPublicSubnet
 
     SecondPublicSubnetRouteTableAssociation:
         Type: AWS::EC2::SubnetRouteTableAssociation
+        DependsOn: InternetGatewayAttachment
         Properties:
             RouteTableId: !Ref PublicRouteTable
             SubnetId: !Ref SecondPublicSubnet
