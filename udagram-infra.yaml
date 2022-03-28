@@ -320,6 +320,7 @@ Resources:
 
     WebServersLB:
         Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+        DependsOn: InternetGatewayAttachment
         Properties:
             SecurityGroups:
             - Ref: LoadBalancerSecurityGroup
