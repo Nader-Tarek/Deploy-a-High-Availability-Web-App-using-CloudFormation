@@ -170,6 +170,7 @@ Resources:
 
     FirstPrivateSubnetRouteTableAssociation:
         Type: AWS::EC2::SubnetRouteTableAssociation
+        DependsOn: FirstNatGW
         Properties:
             RouteTableId: !Ref FirstPrivateRouteTable
             SubnetId: !Ref FirstPrivateSubnet
@@ -191,6 +192,7 @@ Resources:
 
     SecondPrivateSubnetRouteTableAssociation:
         Type: AWS::EC2::SubnetRouteTableAssociation
+        DependsOn: SecondNatGW
         Properties:
             RouteTableId: !Ref SecondPrivateRouteTable
             SubnetId: !Ref SecondPrivateSubnet
